@@ -1,0 +1,227 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background: #f5f9ff;
+  color: #333;
+}
+
+/* Nav */
+header {
+  background: #2c6e49;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+p {
+  text-align: left;
+}
+
+.logo {
+  font-size: 1.3rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #ffeb3b;
+  transition: 0.4s;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Hero */
+.hero {
+  background-image: url('./resources/climate-change.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  color: white;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 0;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+.hero .btn {
+  position: relative;   /* bring it above overlay */
+  z-index: 2;           /* higher than .hero::before z-index: 0 */
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 5px;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: black;
+  color: orange;
+  transition: 0.4s;
+}
+
+/* Main */
+main {
+  padding: 2rem;
+}
+
+.Hero {
+  text-decoration: underline;
+}
+
+.Hero:hover {
+  color: blue;
+  font-size: 40px;
+  transition: 0.4s;
+}
+
+h2, h3 {
+  text-decoration: underline;
+  text-align: left;
+
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 400px;
+}
+
+input, textarea, button {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background: #2c6e49;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #24563a;
+}
+
+/* Footer */
+footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Back to top */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #2c6e49;
+    position: absolute;
+    right: 1rem;
+    top: 60px;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+}
